@@ -30,7 +30,7 @@ class Reporter {
                 parsedResults[moduleName] = parsed_test_results
             }
         });
-        fs.writeFileSync('./results.json', JSON.stringify(parsedResults, null, '\t'))
+        fs.writeFileSync('./report.json', JSON.stringify(parsedResults, null, '\t'))
     }
 }
 
