@@ -40,5 +40,5 @@ for lib in libs:
 
 print('')
 parserkiosk.colors.print_success(
-    'Done generating suite. Use run.py to run and evaluate results'
-)  # noqa E501
+    'Done generating suite. Use run.py to run test-suite'
+)
