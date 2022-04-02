@@ -20,8 +20,6 @@ import os
 import parserkiosk
 from libs import libs
 
-curdir = os.path.curdir
-
 
 for lib in libs:
     print(f'{lib.upper()}')
