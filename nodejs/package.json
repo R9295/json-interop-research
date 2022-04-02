@@ -1,0 +1,19 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "reporters": ["./reporter"]
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "jest": "^27.5.1",
+    "json3": "^3.3.3",
+    "json5": "^2.2.1"
+  }
+}

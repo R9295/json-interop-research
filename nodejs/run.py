@@ -18,24 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 
 import parserkiosk
-from libs import libs
 
-curdir = os.path.curdir
-
-
-for lib in libs:
-    print(f'{lib.upper()}')
-    with open(f'{lib}.config.yaml', 'r') as file:
-        with open('config.yaml', 'w') as config:
-            config.write(file.read())
-    if lib != 'pysimdjson':
-        os.system('parserkiosk . --builtin python')
-    else:
-        os.system('parserkiosk . --path pysimdjson.template.jinja2 --ext py')
-    os.system(f'cp -r tests {lib}_tests')
-    os.system(f'cp -r base/* {lib}_tests/')
-    os.system('rm config.yaml')
-    os.system('rm -rf tests')
-
+os.system('npm test')
 print('')
-parserkiosk.colors.print_success('Done generating suite. Use run.py to run test-suite')
+print(parserkiosk.colors.print_success('Done running test suite, see results.json'))

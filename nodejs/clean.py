@@ -15,31 +15,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
-import json
+import os
 
-import parserkiosk
-from libs import libs
-
-reports = {}
-dump = {}
-
-
-for lib in libs:
-    with open(f'{lib}_tests/.report.json', 'r') as file:
-        reports[lib] = json.loads(file.read())
-
-
-def parse_reports(report):
-    return [
-        {'name': item.get('nodeid').replace('.py', ''), 'result': item.get('outcome')}
-        for item in report.get('tests')
-    ]
-
-
-for k, v in reports.items():
-    dump[k] = parse_reports(v)
-
-with open('report.json', 'w') as file:
-    file.write(json.dumps(dump, indent=4, sort_keys=True))
-
-parserkiosk.colors.print_success('Done, see report.json')
+os.system('rm -rf *_tests')
+if os.path.exists('report.json'):
+    os.system('rm report.json')
+os.system('rm -rf __pycache__')

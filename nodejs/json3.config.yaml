@@ -1,0 +1,8 @@
+---
+serialize_function: "json3.parse"
+de_serialize_function: "json3.stringify"
+import_string: "const json3 = require('json3')"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float

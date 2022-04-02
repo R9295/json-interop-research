@@ -1,0 +1,8 @@
+---
+serialize_function: "json5.parse"
+de_serialize_function: "json5.stringify"
+import_string: "const json5 = require('json5')"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float

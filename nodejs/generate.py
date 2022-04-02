@@ -28,10 +28,7 @@ for lib in libs:
     with open(f'{lib}.config.yaml', 'r') as file:
         with open('config.yaml', 'w') as config:
             config.write(file.read())
-    if lib != 'pysimdjson':
-        os.system('parserkiosk . --builtin python')
-    else:
-        os.system('parserkiosk . --path pysimdjson.template.jinja2 --ext py')
+    os.system('parserkiosk . --builtin node_js')
     os.system(f'cp -r tests {lib}_tests')
     os.system(f'cp -r base/* {lib}_tests/')
     os.system('rm config.yaml')
