@@ -21,24 +21,8 @@ import parserkiosk
 
 from libs import libs
 
-curdir = os.path.curdir
-
-
 for lib in libs:
-    print(f'{lib.upper()}')
-    with open(f'{lib}.config.yaml', 'r') as file:
-        with open('config.yaml', 'w') as config:
-            config.write(file.read())
-    if lib != 'pysimdjson':
-        os.system('parserkiosk . --builtin python')
-    else:
-        os.system('parserkiosk . --path pysimdjson.template.jinja2 --ext py')
-    os.system(f'cp -r tests {lib}_tests')
-    os.system(f'cp -r base/* {lib}_tests/')
-    os.system('rm config.yaml')
-    os.system('rm -rf tests')
-
-print('')
-parserkiosk.colors.print_success(
-    'Done generating suite. Use run.py to run and evaluate results'
-)  # noqa E501
+    os.chdir(f'{lib}_tests')
+    os.system('pytest --json-report --json-report-omit keywords streams traceback .')
+    os.chdir('..')
+print(parserkiosk.colors.print_success('Done running test suite, run analyze.py next'))

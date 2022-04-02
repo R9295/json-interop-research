@@ -15,30 +15,31 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
-import os
-
+from libs import libs
+import json
 import parserkiosk
 
-from libs import libs
 
-curdir = os.path.curdir
+reports = {}
+dump = {}
 
 
 for lib in libs:
-    print(f'{lib.upper()}')
-    with open(f'{lib}.config.yaml', 'r') as file:
-        with open('config.yaml', 'w') as config:
-            config.write(file.read())
-    if lib != 'pysimdjson':
-        os.system('parserkiosk . --builtin python')
-    else:
-        os.system('parserkiosk . --path pysimdjson.template.jinja2 --ext py')
-    os.system(f'cp -r tests {lib}_tests')
-    os.system(f'cp -r base/* {lib}_tests/')
-    os.system('rm config.yaml')
-    os.system('rm -rf tests')
+    with open(f'{lib}_tests/.report.json', 'r') as file:
+        reports[lib] = json.loads(file.read())
 
-print('')
-parserkiosk.colors.print_success(
-    'Done generating suite. Use run.py to run and evaluate results'
-)  # noqa E501
+
+def parse_reports(report):
+    return [
+        {'name': item.get('nodeid').replace('.py', ''), 'result': item.get('outcome')}
+        for item in report.get('tests')
+    ]
+
+
+for k, v in reports.items():
+    dump[k] = parse_reports(v)
+
+with open('report.json', 'w') as file:
+    file.write(json.dumps(dump, indent=4, sort_keys=True))
+
+parserkiosk.colors.print_error('Done, see report.json')

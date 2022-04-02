@@ -1,0 +1,9 @@
+parserkiosk
+deepdiff
+pytest-json-report
+pytest
+pysimdjson==4.0.3
+orjson==3.6.7
+simplejson==3.17.6
+ujson==5.1.0
+python-rapidjson==1.6
