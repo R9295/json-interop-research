@@ -10,7 +10,6 @@
 ``` bash
 $ python generate.py
 $ python run.py
-$ python analyze.py
 $ cat report.json
 # do stuff
 $ python clean.py
