@@ -9,5 +9,5 @@
 
 ``` bash
 $ python generate.py
-# run tests in each individual folder
+python run.py
 ```
