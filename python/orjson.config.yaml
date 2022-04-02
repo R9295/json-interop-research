@@ -1,0 +1,9 @@
+
+---
+serialize_function: "orjson.loads"
+de_serialize_function: "orjson.dumps"
+import_string: "import orjson"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float

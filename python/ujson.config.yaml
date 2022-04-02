@@ -1,0 +1,9 @@
+
+---
+serialize_function: "ujson.loads"
+de_serialize_function: "ujson.dumps"
+import_string: "import ujson"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float

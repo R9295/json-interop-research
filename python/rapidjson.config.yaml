@@ -1,0 +1,8 @@
+---
+serialize_function: "rapidjson.loads"
+de_serialize_function: "rapidjson.dumps"
+import_string: "import rapidjson"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float

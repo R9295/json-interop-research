@@ -1,0 +1,8 @@
+---
+serialize_function: "simplejson.loads"
+de_serialize_function: "simplejson.dumps"
+import_string: "import simplejson"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float

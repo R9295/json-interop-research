@@ -1,0 +1,8 @@
+---
+serialize_function: "parser.parse"
+de_serialize_function: "simdjson.dump"
+import_string: "import simdjson"
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float
