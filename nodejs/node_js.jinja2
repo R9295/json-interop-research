@@ -17,7 +17,7 @@ const { readFileSync } = require('fs');
 {%- endmacro %}
 
 {% for t_name, t in tests.items() %}
-it('{{t.info}}', () => {
+it('{{t_name}}', () => {
     {{ input(t.input, 'data') }}
     {%- if is_dict(t.assert.arg) is true %}
     {{ input(t.input, 'expected') }}

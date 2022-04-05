@@ -21,4 +21,4 @@ import parserkiosk
 
 os.system('npm test')
 print('')
-print(parserkiosk.colors.print_success('Done running test suite, see results.json'))
+print(parserkiosk.colors.print_success('Done running test suite, see report.json'))

@@ -22,15 +22,17 @@ from libs import libs
 
 curdir = os.path.curdir
 
-
+os.system('cp -r ../base/fixtures fixtures')
+os.system('cp ../base/test_serialize_fail.yaml .')
+os.system('cp ../base/test_serialize_succ.yaml .')
 for lib in libs:
     print(f'{lib.upper()}')
     with open(f'{lib}.config.yaml', 'r') as file:
         with open('config.yaml', 'w') as config:
             config.write(file.read())
-    os.system('parserkiosk . --builtin node_js')
+    os.system('parserkiosk . --override --path ./node_js.jinja2 --ext test.js')
     os.system(f'cp -r tests {lib}_tests')
-    os.system(f'cp -r base/* {lib}_tests/')
+    os.system(f'cp -r ../base/commons.js {lib}_tests/')
     os.system('rm config.yaml')
     os.system('rm -rf tests')
 
