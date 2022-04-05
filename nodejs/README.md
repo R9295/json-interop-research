@@ -1,6 +1,6 @@
 # Testing Node.js JSON implementations
 
-1.JSON (stdlib) Node v16.14.2  
+1. JSON (stdlib) Node v16.14.2  
 2. json5 v2.2.1  
 3. json3 v3.3.3  
 
