@@ -1,8 +1,0 @@
----
-serialize_function: "json.loads"
-de_serialize_function: "json.dumps"
-import_string: "import json"
-assert_functions:
-    - assert_dict
-    - assert_list
-    - assert_float

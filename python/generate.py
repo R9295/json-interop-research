@@ -31,7 +31,7 @@ for lib in libs:
     else:
         os.system('parserkiosk . --path pysimdjson.template.jinja2 --ext py')
     os.system(f'cp -r tests {lib}_tests')
-    os.system(f'cp -r base/* {lib}_tests/')
+    os.system(f'cp -r ../base/* {lib}_tests/')
     os.system('rm config.yaml')
     os.system('rm -rf tests')
 
