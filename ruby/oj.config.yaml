@@ -1,0 +1,7 @@
+---
+serialize_function: "Oj.load"
+de_serialize_function: "Oj.dump"
+import_string: "require 'oj'"
+assert_functions:
+    - assert_dict
+    - assert_list

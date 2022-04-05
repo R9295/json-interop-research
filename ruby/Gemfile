@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+gem "oj"
+gem "yajl-ruby"
+gem "json_pure"
+gem "rspec", "~> 3.11"
