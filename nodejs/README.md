@@ -4,6 +4,7 @@
 3. json3 v3.3.3
 
 ``` bash
+$ npm install
 $ python generate.py
 $ python run.py
 $ python analyze.py
