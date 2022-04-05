@@ -21,3 +21,6 @@ os.system('rm -rf *_tests')
 if os.path.exists('report.json'):
     os.system('rm report.json')
 os.system('rm -rf __pycache__')
+os.system('rm test_serialize_fail.yaml')
+os.system('rm test_serialize_succ.yaml')
+os.system('rm report.json')
