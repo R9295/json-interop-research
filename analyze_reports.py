@@ -55,8 +55,10 @@ if __name__ == "__main__":
     results = {}
     python_report = json.loads(read_report('python'))
     node_report = json.loads(read_report('nodejs'))
+    ruby_report = json.loads(read_report('ruby'))
     reports = get_report_list(python_report, 'python')
     reports.extend(get_report_list(node_report, 'nodejs'))
+    reports.extend(get_report_list(ruby_report, 'ruby'))
     for index, report in enumerate(reports):
         for index2, report2 in enumerate(reports):
             if index2 != index and not results.get(
