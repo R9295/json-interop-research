@@ -2,5 +2,6 @@
 An Exploration Into JSON Interoperability Vulnerabilities
 
 ``` bash
-$ ./runall.sh
+$ ./do.sh
+$ ./clean.sh
 ```
