@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Since I use the debian built package for ruby, bundle == bundle2.7
+
 # run
 cd python
 python generate.py
@@ -17,9 +19,9 @@ cd ..
 
 # ruby
 cd ruby
-bundle install
+bundle2.7 install
 python generate.py
-python run.py
+python run.py --with-alias
 python analyze.py
 
 # analyze 
