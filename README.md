@@ -6,8 +6,9 @@ An Exploration Into JSON Interoperability Vulnerabilities
 2. Ruby / Bundle 2.7
 3. Nodejs v16.14.2
 
-
 ``` bash
 $ ./do.sh
+$ npx serve -s .
+# Go to address to see visualization
 $ ./clean.sh
 ```
