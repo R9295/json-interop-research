@@ -30,7 +30,6 @@
         <script>
             fetch('/analysis.json').then((data) => {
                     data.json().then((analysis) => {
-                            Object.values(analysis).forEach(item => console.log(item))
                      var data = {
                        labels: Object.keys(analysis),
                        datasets: [{
