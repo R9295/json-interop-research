@@ -32,7 +32,7 @@ for lib in libs:
 def parse_reports(report):
     return [
         {
-            'name': f'{item.get("id")[2:item.get("id").index(".rb")]}::{item.get("description")}',  # noqa E501
+            'name': f'{item.get("id")[2:item.get("id").index(".rb")].replace("_spec", "")}::{item.get("description")}',  # noqa E501
             'result': item.get('status'),
         }
         for item in report.get('examples')
