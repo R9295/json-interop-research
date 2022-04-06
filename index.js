@@ -7,7 +7,7 @@ fetch("/analysis.json")
         labels: Object.keys(analysis),
         datasets: [
           {
-            label: "Dataset #1",
+            label: "analysis.json. You can click on a bar to open a modal with additional info",
             backgroundColor: "#87AF5F",
             borderWidth: 2,
             hoverBackgroundColor: "#8197BF",
@@ -17,6 +17,13 @@ fetch("/analysis.json")
         ],
       };
       var options = {
+        plugins: {
+        legend: {
+          labels: {
+              color: '#ffff'
+          }
+        }
+        },
         maintainAspectRatio: false,
         scales: {
           y: {
