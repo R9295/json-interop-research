@@ -34,13 +34,22 @@ def get_report_list(report_dict, lang):
 
 def diff_reports(report1, report2):
     diff = []
-    for i in report1.get('results'):
-        if i not in report2.get('results'):
+    report1_results = report1.get('results')
+    report2_results = report2.get('results')
+    for test in report1_results:
+        equiv_test = [
+            item for item in report2_results if item.get('name') == test.get('name')
+        ][0]
+        test_failed = test.get('result') == 'failed'
+        equiv_test_failed = equiv_test.get('result') == 'failed'
+        if test_failed or equiv_test_failed:
             diff.append(
                 {
-                    'name': i.get('name'),
-                    '__who_passed': report1.get('name')
-                    if i.get('result') == 'passed'
+                    'name': test.get('name'),
+                    '__who_failed': 'both'
+                    if test_failed and equiv_test_failed
+                    else report1.get('name')
+                    if test_failed
                     else report2.get('name'),
                 }
             )
