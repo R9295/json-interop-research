@@ -8,7 +8,7 @@ An Exploration Into JSON Interoperability Vulnerabilities
 
 ``` bash
 $ ./do.sh
-$ npx serve -s .
+$ npx serve .
 # Go to address to see visualization
 $ ./clean.sh
 ```
