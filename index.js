@@ -1,53 +1,60 @@
 MicroModal.init();
 
+const parseData = (data) => {
+  return Object.keys(data).map((item) => {
+    const name = item.split("vs");
+    return {
+      x: name[0],
+      y: name[1],
+      v: data[item].length,
+    };
+  });
+};
 fetch("/analysis.json")
   .then((data) => {
     data.json().then((analysis) => {
-      var data = {
-        labels: Object.keys(analysis),
-        datasets: [
-          {
-            label: "analysis.json. You can click on a bar to open a modal with additional info",
-            backgroundColor: "#87AF5F",
-            borderWidth: 2,
-            hoverBackgroundColor: "#8197BF",
-            hoverBorderColor: "#8197BF",
-            data: Object.values(analysis).map((item) => item.length),
-          },
-        ],
-      };
-      var options = {
-        plugins: {
-        legend: {
-          labels: {
-              color: '#ffff'
-          }
-        }
-        },
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            stacked: true,
-            grid: {
-              display: true,
-              color: "#A293CB",
-            },
-          },
-          x: {
-            grid: {
-              display: false,
-            },
-          },
-        },
-      };
+      const parsedData = parseData(analysis);
+      const parsedLen = parsedData.length;
+      const uniqueParsedLen = [...new Set(parsedData.map((item) => item.x))]
+        .length;
       new Chart("chart", {
-        type: "bar",
+        type: "matrix",
+        data: {
+          datasets: [
+            {
+              label: "My Matrix",
+              data: parsedData,
+              backgroundColor(context) {
+                const value = context.dataset.data[context.dataIndex].v;
+                const alpha = value / 120;
+                return Chart.helpers.color("red").alpha(alpha).rgbString();
+              },
+              width(context) {
+                const a = context.chart.chartArea;
+                if (!a) {
+                  return 0;
+                }
+                return (
+                  (a.right - a.left) / uniqueParsedLen - (uniqueParsedLen - 1)
+                );
+              },
+              height(context) {
+                const a = context.chart.chartArea;
+                if (!a) {
+                  return 0;
+                }
+                return (
+                  (a.bottom - a.top) / uniqueParsedLen - (uniqueParsedLen - 1)
+                );
+              },
+            },
+          ],
+        },
         options: {
-          ...options,
           onClick: (e, element) => {
-            var index = element[0].index;
-            var content = document.getElementById("modal-1-content");
-            var title = document.getElementById("modal-1-title");
+            const index = element[0].index;
+            const content = document.getElementById("modal-1-content");
+            const title = document.getElementById("modal-1-title");
             title.innerHTML = `<h3>${Object.keys(analysis)[index]}</h3>`;
             content.innerHTML = `<h5>Total entries: ${
               Object.values(analysis)[index].length
@@ -58,8 +65,45 @@ fetch("/analysis.json")
             )}</pre>`;
             MicroModal.show("modal-1");
           },
+          legend: {
+            display: false,
+          },
+          tooltips: {
+            callbacks: {
+              title() {
+                return "";
+              },
+              label(context) {
+                const v = context.dataset.data[context.dataIndex];
+                return ["x: " + v.x, "y: " + v.y, "v: " + v.v];
+              },
+            },
+          },
+          scales: {
+            x: {
+              type: "category",
+              labels: [...new Set(parsedData.map((item) => item.x))],
+              ticks: {
+                display: true,
+              },
+              gridLines: {
+                display: false,
+              },
+            },
+            y: {
+              type: "category",
+              labels: [...new Set(parsedData.map((item) => item.y))],
+              offset: true,
+              reverse: false,
+              ticks: {
+                display: true,
+              },
+              gridLines: {
+                display: false,
+              },
+            },
+          },
         },
-        data: data,
       });
     });
   })
