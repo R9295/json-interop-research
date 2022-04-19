@@ -27,5 +27,4 @@ python analyze.py
 # analyze 
 cd ..
 python analyze_reports.py
-npx serve -s .
 

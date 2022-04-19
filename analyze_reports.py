@@ -36,6 +36,8 @@ def get_report_list(report_dict, lang):
 
 
 if __name__ == "__main__":
+    print('')
+    colors.print_success('Generating final report')
     results = {}
     python_report = json.loads(read_report('python'))
     node_report = json.loads(read_report('nodejs'))
