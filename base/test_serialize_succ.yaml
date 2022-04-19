@@ -557,7 +557,7 @@ tests:
             type: "file"
             arg: "y_string_unicode_U_plus_10FFFE_nonchar.json"
         assert:
-            func: "assert_dict"
+            func: "assert_list"
             arg: "\"\""
     test_string_unicode_2:
         info: ""

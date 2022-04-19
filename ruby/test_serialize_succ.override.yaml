@@ -27,4 +27,4 @@ tests:
             arg: 'false'
     test_string_accepted_surrogate_pair:
         assert:
-            arg: '["udd1ea"]'
+            arg: '["𐐷"]'
