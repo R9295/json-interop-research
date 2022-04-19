@@ -18,7 +18,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 
 import parserkiosk
-
 from libs import libs
 
 os.system('cp ../base/test_serialize_fail.yaml .')

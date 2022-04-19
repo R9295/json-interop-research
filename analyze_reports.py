@@ -17,6 +17,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
 import json  # lol
 
+import matplotlib.pyplot as plt
+import pandas
+import seaborn as sns
 from parserkiosk import colors
 
 
@@ -32,34 +35,6 @@ def get_report_list(report_dict, lang):
     ]
 
 
-def diff_reports(report1, report2):
-    diff = []
-    report1_results = report1.get('results')
-    report2_results = report2.get('results')
-    for test in report1_results:
-        equiv_test = [
-            item for item in report2_results if item.get('name') == test.get('name')
-        ][0]
-        test_failed = test.get('result') == 'failed'
-        equiv_test_failed = equiv_test.get('result') == 'failed'
-        if test_failed or equiv_test_failed:
-            diff.append(
-                {
-                    'name': test.get('name'),
-                    '__who_failed': 'both'
-                    if test_failed and equiv_test_failed
-                    else report1.get('name')
-                    if test_failed
-                    else report2.get('name'),
-                }
-            )
-    return diff
-
-
-def format_report_names(report1, report2):
-    return f'{report1["name"]} vs {report2["name"]}'
-
-
 if __name__ == "__main__":
     results = {}
     python_report = json.loads(read_report('python'))
@@ -68,13 +43,28 @@ if __name__ == "__main__":
     reports = get_report_list(python_report, 'python')
     reports.extend(get_report_list(node_report, 'nodejs'))
     reports.extend(get_report_list(ruby_report, 'ruby'))
-    for index, report in enumerate(reports):
-        for index2, report2 in enumerate(reports):
-            if index2 != index and not results.get(
-                format_report_names(report2, report)
-            ):
-                diff = diff_reports(report, report2)
-                results[format_report_names(report, report2)] = diff
+    for test in reports[0].get('results'):
+        results[test.get('name')] = {}
+    for report in reports:
+        for test in report.get('results'):
+            results[test.get('name')].update({report.get('name'): test.get('result')})
+    matrix = []
+    for key, value in results.items():
+        for k, v in value.items():
+            matrix.append(
+                {
+                    'implementation': k,
+                    'test': key,
+                    'passed': v == 'passed',
+                }
+            )
     with open('analysis.json', 'w') as file:
-        file.write(json.dumps(results, indent=4))
-    colors.print_success('Done. See: analysis.json')
+        file.write(json.dumps({'data': matrix}, indent=4))
+    df = pandas.read_json('./analysis.json', orient='split')
+    df['passed'] = df.apply(lambda row: 0 if row.get('passed') else 0.6, axis=1)
+    data = df.pivot_table(values='passed', index='test', columns='implementation')
+    plt.subplots(figsize=(30, 80))
+    sns.heatmap(
+        data, linewidths=1, linecolor='white', vmax=1, square=True, cbar=False
+    ).figure.savefig('matrix.png', dpi=140)
+    colors.print_success('Done. See matrix.png or analysis.json')
