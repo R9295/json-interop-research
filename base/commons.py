@@ -15,3 +15,7 @@ def assert_list(a, b):
 
 def assert_float(a, b):
     return isinstance(a, float) and isinstance(b, float) and a == b
+
+
+def assert_str(a, b):
+    return isinstance(a, str) and isinstance(b, str) and a == b

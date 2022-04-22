@@ -7,3 +7,4 @@ assert_functions:
     - assert_dict
     - assert_list
     - assert_float
+    - assert_str

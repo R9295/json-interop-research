@@ -117,8 +117,8 @@
       test_object_single_quote:
           info: ""
           input:
-              type: "raw"
-              arg: "'\"{a:0}\"'"
+              type: "str"
+              arg: "{'a': 0}"
           assert:
               func: "fail"
       test_incomplete_false:

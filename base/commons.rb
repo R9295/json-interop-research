@@ -12,3 +12,7 @@ end
 def assert_float(a, b)
     a == b
 end
+
+def assert_str(a, b)
+  a == b
+end

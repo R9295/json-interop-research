@@ -28,3 +28,9 @@ tests:
     test_string_accepted_surrogate_pair:
         assert:
             arg: '["𐐷"]'
+    test_string_unicode_U_plus_1FFFE_nonchar:
+        assert:
+            arg: '["\u{1FFFE}"]'
+    test_string_unicode_U_plus_10FFFE_nonchar:
+        assert:
+            arg: '["\u{10FFFE}"]'

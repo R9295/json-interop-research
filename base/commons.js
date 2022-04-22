@@ -24,6 +24,11 @@ const assert_float = (a, b) => {
     )
 }
 
+const assert_str = (a, b) => {
+    return typeof a === 'string' && typeof b === 'string'
+}
+
+exports.assert_str = assert_str
 exports.assert_float = assert_float
 exports.assert_list = assert_list
 exports.assert_dict = assert_dict
