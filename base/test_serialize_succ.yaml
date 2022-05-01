@@ -490,7 +490,7 @@ tests:
             type: "str"
             arg: "false"
         assert:
-            func: "assert_dict"
+            func: "assert_bool"
             arg: "False"
     test_string_accepted_surrogate_pairs:
         info: ""
@@ -515,7 +515,7 @@ tests:
             type: "str"
             arg: "null"
         assert:
-            func: "assert_dict"
+            func: "assert_none"
             arg: 'None'
     # ??
     test_structure_lonely_true:
@@ -524,7 +524,7 @@ tests:
             type: "str"
             arg: "true"
         assert:
-            func: "assert_dict"
+            func: "assert_bool"
             arg: 'True'
     test_string_in_array:
         info: ""
@@ -581,7 +581,7 @@ tests:
             type: "str"
             arg: "42"
         assert:
-            func: "assert_dict"
+            func: "assert_int"
             arg: '42'
     test_string_backslash_and_u_escaped_zero:
         info: ""

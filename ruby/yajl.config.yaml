@@ -7,3 +7,6 @@ assert_functions:
     - assert_list
     - assert_float
     - assert_str
+    - assert_bool
+    - assert_int
+    - assert_none

@@ -1,0 +1,239 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cfbb449f91d754b6885cb45081783d4f",
+    "packages": [
+        {
+            "name": "colinodell/json5",
+            "version": "v2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/colinodell/json5.git",
+                "reference": "2b0fabd1ba71fe8079a832d6097ec5c6fd92361d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/colinodell/json5/zipball/2b0fabd1ba71fe8079a832d6097ec5c6fd92361d",
+                "reference": "2b0fabd1ba71fe8079a832d6097ec5c6fd92361d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.1.3|^8.0"
+            },
+            "conflict": {
+                "scrutinizer/ocular": "1.7.*"
+            },
+            "require-dev": {
+                "mikehaertl/php-shellcommand": "^1.2.5",
+                "phpstan/phpstan": "^0.12.58",
+                "scrutinizer/ocular": "^1.6",
+                "squizlabs/php_codesniffer": "^2.3",
+                "symfony/finder": "^4.4|^5.2",
+                "symfony/phpunit-bridge": "^5.1"
+            },
+            "bin": [
+                "bin/json5"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/global.php"
+                ],
+                "psr-4": {
+                    "ColinODell\\Json5\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "UTF-8 compatible JSON5 parser for PHP",
+            "homepage": "https://github.com/colinodell/json5",
+            "keywords": [
+                "JSON5",
+                "json",
+                "json5_decode",
+                "json_decode"
+            ],
+            "support": {
+                "issues": "https://github.com/colinodell/json5/issues",
+                "source": "https://github.com/colinodell/json5/tree/v2.2.2"
+            },
+            "funding": [
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/colinodell",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-02-22T14:42:16+00:00"
+        },
+        {
+            "name": "halaxa/json-machine",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/halaxa/json-machine.git",
+                "reference": "b4086dfe72670df060d2bd481f01bc9e450a5640"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/halaxa/json-machine/zipball/b4086dfe72670df060d2bd481f01bc9e450a5640",
+                "reference": "b4086dfe72670df060d2bd481f01bc9e450a5640",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "suggest": {
+                "ext-json": "To run JSON Machine out of the box without custom decoders.",
+                "guzzlehttp/guzzle": "To run example with GuzzleHttp"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JsonMachine\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "src/autoloader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Halaxa",
+                    "email": "filip@halaxa.cz"
+                }
+            ],
+            "description": "Efficient, easy-to-use and fast JSON pull parser",
+            "support": {
+                "issues": "https://github.com/halaxa/json-machine/issues",
+                "source": "https://github.com/halaxa/json-machine/tree/1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://ko-fi.com/G2G57KTE4",
+                    "type": "other"
+                }
+            ],
+            "time": "2022-03-03T11:02:11+00:00"
+        },
+        {
+            "name": "salsify/json-streaming-parser",
+            "version": "v8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salsify/jsonstreamingparser.git",
+                "reference": "4ae5394136a037e09402ba8b48dbf4e20475e69d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salsify/jsonstreamingparser/zipball/4ae5394136a037e09402ba8b48dbf4e20475e69d",
+                "reference": "4ae5394136a037e09402ba8b48dbf4e20475e69d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "ext-json": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonStreamingParser\\": "src",
+                    "JsonStreamingParser\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gonzalez",
+                    "email": "rob@salsify.com",
+                    "homepage": "http://salsify.com/"
+                },
+                {
+                    "name": "Maxim Gnatenko",
+                    "email": "mgnatenko@gmail.com"
+                },
+                {
+                    "name": "Max Grigorian",
+                    "email": "maxakawizard@gmail.com",
+                    "homepage": "http://wizardcat.com/"
+                },
+                {
+                    "name": "ThePanz",
+                    "email": "thepanz@gmail.com"
+                }
+            ],
+            "description": "A streaming parser for JSON in PHP.",
+            "homepage": "https://github.com/salsify/jsonstreamingparser",
+            "keywords": [
+                "json",
+                "parser",
+                "streaming"
+            ],
+            "support": {
+                "issues": "https://github.com/salsify/jsonstreamingparser/issues",
+                "source": "https://github.com/salsify/jsonstreamingparser/tree/master"
+            },
+            "time": "2020-05-22T20:10:04+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

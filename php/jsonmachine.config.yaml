@@ -1,0 +1,12 @@
+---
+serialize_function: "Items::fromString"
+de_serialize_function: "Items::fromString" # unsed anyways
+import_string: 'use JsonMachine\Items;'
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float
+    - assert_str
+    - assert_bool
+    - assert_int
+    - assert_none

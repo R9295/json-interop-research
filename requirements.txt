@@ -24,7 +24,7 @@ ordered-set==4.0.2
 orjson==3.6.7
 packaging==21.3
 pandas==1.4.2
-parserkiosk @ git+https://github.com/R9295/parserkiosk@86747876597d18f7b344e41b5275a7392f3aa097
+parserkiosk @ git+https://github.com/R9295/parserkiosk@master
 parso==0.8.3
 pathspec==0.9.0
 pexpect==4.8.0
@@ -59,3 +59,4 @@ traitlets==5.1.1
 ujson==5.1.0
 wcwidth==0.2.5
 yamale==4.0.4
+xmltodict

@@ -19,3 +19,15 @@ def assert_float(a, b):
 
 def assert_str(a, b):
     return isinstance(a, str) and isinstance(b, str) and a == b
+
+
+def assert_none(a, b):
+    return a is None and b is None
+
+
+def assert_int(a, b):
+    return isinstance(a, int) and isinstance(b, int) and a == b
+
+
+def assert_bool(a, b):
+    return isinstance(a, bool) and isinstance(b, bool) and a == b
