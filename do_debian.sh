@@ -23,8 +23,14 @@ bundle2.7 install
 python generate.py
 python run.py --with-alias
 python analyze.py
+cd ..
 
-# analyze 
+cd php
+python generate.py
+python run.py
+python analyze.py
+
+# analyze all
 cd ..
 python analyze_reports.py
 

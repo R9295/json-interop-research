@@ -1,0 +1,12 @@
+---
+serialize_function: "json_decode"
+de_serialize_function: "json_encode"
+import_string: ""
+assert_functions:
+    - assert_dict
+    - assert_list
+    - assert_float
+    - assert_str
+    - assert_bool
+    - assert_int
+    - assert_none

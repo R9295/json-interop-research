@@ -22,6 +22,11 @@ python generate.py
 python run.py
 python analyze.py
 
+cd php
+python generate.py
+python run.py
+python analyze.py
+
 # analyze 
 cd ..
 python analyze_reports.py

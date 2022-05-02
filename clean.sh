@@ -13,3 +13,7 @@ cd ..
 cd ruby
 python clean.py
 cd ..
+
+cd php
+python clean.py
+cd ..

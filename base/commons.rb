@@ -12,3 +12,19 @@ end
 def assert_float(a, b)
     a == b
 end
+
+def assert_str(a, b)
+  a == b
+end
+
+def assert_int(a, b)
+  a == b
+end
+
+def assert_none(a, b)
+  a == nil && b == nil
+end
+
+def assert_bool(a, b)
+ (a == false || a == true) && a == b
+end

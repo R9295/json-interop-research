@@ -25,3 +25,9 @@ tests:
     test_structure_lonely_false:
         assert:
             arg: 'false'
+    test_string_unicode_U_plus_1FFFE_nonchar:
+        assert:
+            arg: '["🿾"]'
+    test_string_unicode_U_plus_10FFFE_nonchar:
+        assert:
+            arg: '["􏿾"]'

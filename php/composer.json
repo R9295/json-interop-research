@@ -1,0 +1,7 @@
+{
+    "require": {
+        "colinodell/json5": "^2.2",
+        "halaxa/json-machine": "^1.1",
+        "salsify/json-streaming-parser": "^8.2"
+    }
+}

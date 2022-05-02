@@ -1,0 +1,71 @@
+---
+# exists mainly for internal values such as None, False and True
+tests:
+    test_array_heterogeneous:
+        assert:
+            arg: '[null, 1, "1", []]'
+    test_structure_lonely_true:
+        assert:
+            arg: 'true'
+    test_structure_true_in_array:
+        assert:
+            arg: '[true]'
+    test_array_null:
+        assert:
+            arg: '[null]'
+    test_array_with_several_null:
+        assert:
+            arg: '[1, null, null, null, 2]'
+    test_structure_lonely_null:
+        assert:
+            arg: 'null'
+    test_array_false:
+        assert:
+            arg: '[false]'
+    test_structure_lonely_false:
+        assert:
+            arg: 'false'
+    test_string_unicode_U_plus_1FFFE_nonchar:
+        assert:
+            arg: '["🿾"]'
+    test_string_unicode_U_plus_10FFFE_nonchar:
+        assert:
+            arg: '["􏿾"]'
+    test_object_long_strings:
+        assert:
+            arg: '["x" => [["id" => "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]], "id" => "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]'
+    test_object_with_newlines:
+        assert:
+            arg: '["a" => "b"]'
+    test_object_duplicated_key:
+        assert:
+            arg: '["a" => "c"]'
+    test_object_basic:
+        assert:
+            arg: '["asd" => "sdf"]'
+    test_object_extreme_numbers:
+        assert:
+            arg: '["min" => -1e+28, "max" => 1e+28]'
+    test_object_duplicated_key_and_value:
+        assert:
+            arg: '["a" => "b"]'
+    test_object_string_unicode:
+        assert:
+            arg: '["title" => "Полтора Землекопа"]'
+    test_object_escaped_null_in_key:
+        assert:
+            arg: '["foo\x00bar" => 42]'
+    test_object_empty_key:
+        assert:
+            arg: '["" => 0]'
+    test_object:
+        assert:
+            arg: '["asd" => "sdf", "dfg" => "fgh"]'
+    test_object_empty:
+        assert:
+            arg: '[]'
+    test_object_simple:
+        assert:
+            arg: '["a" => []]'
+
+

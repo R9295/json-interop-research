@@ -1,0 +1,1 @@
+libs = ['json', 'json5']
