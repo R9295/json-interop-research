@@ -23,8 +23,7 @@ from libs import libs
 curdir = os.path.curdir
 
 os.system('cp -r ../base/fixtures fixtures')
-os.system('cp ../base/test_serialize_fail.yaml .')
-os.system('cp ../base/test_serialize_succ.yaml .')
+os.system('cp ../base/test_serialize_further.yaml .')
 for lib in libs:
     print(f'{lib.upper()}')
     with open(f'{lib}.config.yaml', 'r') as file:

@@ -1,0 +1,69 @@
+---
+  type: "SERIALIZE"
+  tests:
+    test_object_duplicated_key:
+      info: ""
+      input:
+          type: "file"
+          arg: "y_object_duplicated_key.json"
+      assert:
+          func: "assert_dict"
+          arg: '{"a":"c"}'
+    test_object_duplicated_key_and_value:
+        info: ""
+        input:
+            type: "file"
+            arg: "y_object_duplicated_key_and_value.json"
+        assert:
+            func: "assert_dict"
+            arg: '{"a":"b"}'
+    test_object_trailing_garbage:
+      info: ""
+      input:
+        type: "file"
+        arg: 'n_obj_trailing_garbage.json'
+      assert:
+        func: "fail"
+    test_string_comments:
+        info: ""
+        input:
+            type: "file"
+            arg: "y_string_comments.json"
+        assert:
+            func: "assert_list"
+            arg: '["a/*b*/c/*d//e"]'
+    test_string_comments:
+        info: ""
+        input:
+            type: "file"
+            arg: "n_obj_comments.json"
+        assert:
+            func: "fail"
+    test_string_no_quotes:
+        info: ""
+        input:
+          type: "file"
+          arg: "n_str_no_quotes.json"
+        assert:
+          func: "fail"
+    test_string_single_quote:
+        info: ""
+        input:
+          type: "file"
+          arg: "n_str_single_quotes.json"
+        assert:
+          func: "fail"
+    test_str_illegal_unicode:
+        info: ""
+        input:
+          type: "file"
+          arg: "n_obj_bad_utf8.json"
+        assert:
+          func: "fail"
+    test_str_double_double_quote:
+      info: ""
+      input:
+        type: "file"
+        arg: "n_obj_str_double_double_quote.json"
+      assert:
+        func: "fail"

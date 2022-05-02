@@ -1,0 +1,9 @@
+---
+tests:
+    test_object_duplicated_key:
+        assert:
+            arg: '{"a" => "c"}'
+
+    test_object_duplicated_key_and_value:
+        assert:
+            arg: '{"a" => "b"}'

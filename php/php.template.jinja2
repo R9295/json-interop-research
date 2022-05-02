@@ -39,6 +39,8 @@ final class {{ filename }} extends TestCase {
         } catch (JsonException $e) {
             {%- if t.assert.get('arg') != None %}
             $this->assertSame($expected, $e.__toString());
+            {% else %}
+            $this->assertTrue(true, True);
             {% endif %}
         }
         {% endif %}

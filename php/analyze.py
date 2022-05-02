@@ -11,12 +11,11 @@ for lib in libs:
         parsed = xmltodict.parse(file.read())
         suite = [suite for suite in parsed.get('testsuites').values()][0]
         filtered = []
-        for test_file in suite.get('testsuite'):
-            for test in test_file.get('testcase'):
-                filtered.append({
-                        'name': f'{test.get("@class")}::{test.get("@name")}',
-                        'result': 'failed' if test.get('failure') else 'passed'
-                    })
+        for test in suite.get('testsuite').get('testcase'):
+            filtered.append({
+                    'name': f'{test.get("@class")}::{test.get("@name")}',
+                    'result': 'failed' if test.get('failure') else 'passed'
+            })
         data[lib] = filtered
 
 with open('report.json', 'w') as file:
