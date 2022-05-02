@@ -42,9 +42,11 @@ if __name__ == "__main__":
     python_report = json.loads(read_report('python'))
     node_report = json.loads(read_report('nodejs'))
     ruby_report = json.loads(read_report('ruby'))
+    php_report = json.loads(read_report('php'))
     reports = get_report_list(python_report, 'python')
     reports.extend(get_report_list(node_report, 'nodejs'))
     reports.extend(get_report_list(ruby_report, 'ruby'))
+    reports.extend(get_report_list(php_report, 'php'))
     for test in reports[0].get('results'):
         results[test.get('name')] = {}
     for report in reports:
