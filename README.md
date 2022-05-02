@@ -5,7 +5,7 @@ An Exploration Into JSON Interoperability Vulnerabilities
 1. Python 3.10.2
 2. Ruby / Bundle 2.7
 3. Nodejs v16.14.2
-4. PHP 7.4
+4. PHP 7.4 + Composer
 
 ``` bash
 $ ./do.sh
