@@ -9,7 +9,6 @@ An Exploration Into JSON Interoperability Vulnerabilities
 
 ``` bash
 $ ./do.sh
-$ npx serve .
-# Go to address to see visualization
+$ open matrix.png
 $ ./clean.sh
 ```
