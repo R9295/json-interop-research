@@ -32,7 +32,7 @@
         assert:
             func: "assert_list"
             arg: '["a/*b*/c/*d//e"]'
-    test_string_comments:
+    test_obj_comments:
         info: ""
         input:
             type: "file"
