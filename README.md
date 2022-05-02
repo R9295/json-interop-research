@@ -1,7 +1,10 @@
 # json-interop-research
 An Exploration Into JSON Interoperability Vulnerabilities
-### Please see (NOT a research paper):
+
+### Please see:
 [explanation](/explanation.pdf)
+Note: NOT a research paper
+
 ### Tested on
 1. Python 3.10.2
 2. Ruby / Bundle 2.7
@@ -13,3 +16,5 @@ $ ./do.sh
 $ open matrix.png
 $ ./clean.sh
 ```
+### Further
+For the ``Further`` section of the explanation, checkout the branch ``further``
